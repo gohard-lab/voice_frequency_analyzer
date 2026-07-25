@@ -1,0 +1,23 @@
+[project]
+name = "voice-frequency-analyzer"
+version = "0.1.0"
+description = "AI 목소리와 사람 목소리의 주파수 대역 및 스펙트로그램 비교 분석 도구"
+requires-python = ">=3.10"
+
+dependencies = [
+    "librosa>=0.10.1",
+    "matplotlib>=3.8.0",
+    "numpy>=1.26.0",
+    "streamlit>=1.60.0",
+    "supabase>=2.31.0",
+]
+
+# 패키지 빌드를 수행하지 않도록 설정 (README 에러 방지)
+[tool.uv]
+package = false
+
+# uv 최신 표준 개발 의존성 그룹 설정
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
