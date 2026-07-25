@@ -21,3 +21,7 @@ package = false
 dev = [
     "pytest>=8.0.0",
 ]
+
+
+[tool.uv.sources]
+tracker_hub = { git = "https://github.com/gohard-lab/tracker-hub.git" }
