@@ -10,6 +10,7 @@ dependencies = [
     "numpy>=1.26.0",
     "streamlit>=1.60.0",
     "supabase>=2.31.0",
+    "tracker_hub",
 ]
 
 # 패키지 빌드를 수행하지 않도록 설정 (README 에러 방지)
