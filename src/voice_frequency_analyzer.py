@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 import librosa
 import librosa.display
 import numpy as np
+import threading
+from tracker_hub import log_app_usage
+
 
 def analyze_voice_spectrum(human_audio_file, ai_audio_file):
     # [실전 노하우 1] 재실행 관리: 파일 객체 커서 초기화 (0바이트 읽기 에러 방지)
@@ -59,6 +62,16 @@ def analyze_voice_spectrum(human_audio_file, ai_audio_file):
 
 
 if __name__ == "__main__":
+    # 앱 최초 오픈 트래킹
+    if "app_opened_logged" not in st.session_state:
+        # log_app_usage(
+        #     "voice_frequency_analyzer", 
+        #     "app_opened", 
+        #     details={"human_filename": "", "ai_filename": ""}
+        # )
+
+        st.session_state.app_opened_logged = True
+
     st.title("AI 목소리 vs 진짜 목소리 주파수 분석기")
     st.write("음성 파일을 업로드하고 분석 버튼을 누르면 주파수 스펙트럼 차이를 확인할 수 있습니다.")
 
